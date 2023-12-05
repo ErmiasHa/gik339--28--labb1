@@ -1,14 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
+    display: flex;
+    background-color: #a6a4a4;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
 }
 
 header {
     background-color: #333;
-    color: #fff;
-    text-align: center;
+    color: white;
     padding: 10px;
+    text-align: center;
+    margin-bottom: 0; 
+    top: 40px;
 }
+
+section {
+    width: 60%;
+    background-color: #f0f0f0;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: left;
+    margin: auto;
+    /* position: absolute; */
+    /* bottom: -40px;  */
+    /* margin-top: 0; */
+}
+
+.label-input-group {
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex; /* Använd flexbox för att justera label och input */
+    align-items: center;
+
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 80px; /* Justera högermarginal för att ge mellanrum mellan label och input */
+
+}
+
+.textfield {
+    margin-bottom: 10px;
+    padding: 5px;
+    flex: 1; /* Gör input flexibel så att den expanderar och fyller tillgängligt utrymme */
+
+}
+
+.checkbox {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+}
+
+
 
 nav {
     margin-top: 10px;
@@ -21,26 +75,6 @@ nav a {
     color: #333;
 }
 
-section {
-    margin-top: 20px;
-   
-    text-align: center;
-     align-self: flex-end;
-     padding: 20px;
-        width: 60%;
-    
-
-}
-
-.textfield {
-    margin-bottom: 10px;
-    padding: 5px;
-}
-
-.checkbox {
-    margin-bottom: 10px;
-}
-
 button {
     padding: 10px;
     background-color: #4CAF50;
@@ -50,7 +84,7 @@ button {
 }
 
 .custom-div {
-    border: 1px solid #333;
+    border: 2px solid #333;
     padding: 10px;
     margin-top: 20px;
 }

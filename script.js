@@ -1,4 +1,4 @@
-ocument.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     // Variabel 1: Checkboxen
     const checkboxElement = document.getElementById("divStyle");
 
