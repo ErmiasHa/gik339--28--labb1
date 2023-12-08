@@ -1,9 +1,10 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     // Variabel 1: Checkboxen
-    const checkboxElement = document.getElementById("divStyle");
+    const checkboxElement = document.querySelector("#divStyle");
 
     // Variabel 2: Alla textfält
-    const textfieldsCollection = document.getElementsByClassName("textfield");
+    const textfieldsCollection = document.querySelectorAll(".textfield");
 
     // Variabel 3: Knappen
     const submitButton = document.getElementById("submitButton");
@@ -13,8 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fördefinierad funktion som eventlyssnare för inputfälten
     function handleInputEvent(e) {
-        console.log("Avsändare: " + e.target);
-
         const fieldName = e.target.name;
 
         if (fieldName === "content") {
@@ -24,22 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Eventlyssnare till checkboxen
     checkboxElement.addEventListener("change", function () {
-        // Hämta färgen från input-fältet med namn/id "color"
         const colorInput = document.getElementById("color");
         const backgroundColor = colorInput.value;
 
-        // Sätt bakgrundsfärgen på div-elementet
         customDivElement.style.backgroundColor = backgroundColor;
     });
 
     // Eventlyssnare till textfälten
-    for (let i = 0; i < textfieldsCollection.length; i++) {
-        textfieldsCollection[i].addEventListener("input", handleInputEvent);
-    }
+    textfieldsCollection.forEach(function (textField) {
+        textField.addEventListener("input", handleInputEvent);
+        textField.addEventListener("blur", handleInputEvent); // Lägg till eventet 'blur'
+    });
 
     // Eventlyssnare till knappen
     submitButton.addEventListener("click", function () {
-        // Göm div-elementet istället för att ta bort det
-        customDivElement.style.display;// "none"
+        // Ta bort div-elementet från DOM-trädet
+        customDivElement.remove();
     });
 });
