@@ -1,10 +1,12 @@
 
+
 document.addEventListener("DOMContentLoaded", function () {
     // Variabel 1: Checkboxen
-    const checkboxElement = document.querySelector("#divStyle");
+    const checkboxElement = document.getElementById("divStyle");
 
     // Variabel 2: Alla textfält
-    const textfieldsCollection = document.querySelectorAll(".textfield");
+    const textfieldsCollection = document.getElementsByClassName("textfield");
+    const textfieldsArray = Array.from(textfieldsCollection);
 
     // Variabel 3: Knappen
     const submitButton = document.getElementById("submitButton");
@@ -29,12 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const colorInput = document.getElementById("color");
         const backgroundColor = colorInput.value;
 
-        // Sätt bakgrundsfärgen på div-elementet
+    
         customDivElement.style.backgroundColor = backgroundColor;
     });
 
     // Eventlyssnare till textfälten
-    textfieldsCollection.forEach(function (textField) {
+    textfieldsArray.forEach(function (textField) {
         textField.addEventListener("input", handleInput);
     });
 
@@ -44,3 +46,4 @@ document.addEventListener("DOMContentLoaded", function () {
         customDivElement.remove();
     });
 });
+
