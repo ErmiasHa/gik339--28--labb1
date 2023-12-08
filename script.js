@@ -12,27 +12,30 @@ document.addEventListener("DOMContentLoaded", function () {
     // Variabel 4: Div-elementet
     const customDivElement = document.getElementById("customDiv");
 
-    // Fördefinierad funktion som eventlyssnare för inputfälten
-    function handleInputEvent(e) {
+    // Uppgift 5 - Skapa en fördefinierad funktion
+    function handleInput(e) {
+        console.log('Target:', e.target);
+
         const fieldName = e.target.name;
 
-        if (fieldName === "content") {
-            customDivElement.innerHTML = "Innehåll från content-fältet: " + e.target.value;
+        if (fieldName === 'content') {
+            customDivElement.innerHTML = e.target.value;
         }
     }
 
     // Eventlyssnare till checkboxen
     checkboxElement.addEventListener("change", function () {
+        // Hämta färgen från input-fältet med namn/id "color"
         const colorInput = document.getElementById("color");
         const backgroundColor = colorInput.value;
 
+        // Sätt bakgrundsfärgen på div-elementet
         customDivElement.style.backgroundColor = backgroundColor;
     });
 
     // Eventlyssnare till textfälten
     textfieldsCollection.forEach(function (textField) {
-        textField.addEventListener("input", handleInputEvent);
-        textField.addEventListener("blur", handleInputEvent); // Lägg till eventet 'blur'
+        textField.addEventListener("input", handleInput);
     });
 
     // Eventlyssnare till knappen
